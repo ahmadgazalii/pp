@@ -1,95 +1,94 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Nav from './components/nav';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
+    <body>
+      
+    <nav className="relative container mx-auto p-6">
+        
+        <div className="flex items-center justify-between">
+
+            <div className="pt-2">
+            <img src="logo.svg" alt="" />
+          </div>
+
+          <div className="hidden space-x-6 md:flex">
+            <a href="#" className="hover:text-gray-500">Pricing</a>
+            <a href="#" className="hover:text-gray-500">Product</a>
+            <a href="#" className="hover:text-gray-500">About Us</a>
+            <a href="#" className="hover:text-gray-500">Careers</a>
+            <a href="#" className="hover:text-gray-500">Community</a>
+          </div>
+          {/* <!-- Button --> */}
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            className="hidden p-3 px-6 pt-2 text-white bg-red-500 rounded-full baseline hover:bg-red-400 md:block"
+            >Get Started</a>
+  
+          
+          <button
+            id="menu-btn"
+            className="block hamburger md:hidden focus:outline-none"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <span className="hamburger-top"></span>
+            <span className="hamburger-middle"></span>
+            <span className="hamburger-bottom"></span>
+          </button>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+  
+        {/* <!-- Mobile Menu --> */}
+        <div className="md:hidden">
+          <div
+            id="menu"
+            className="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+          >
+            <a href="#">Pricing</a>
+            <a href="#">Product</a>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Community</a>
+          </div>
+        </div>
+      </nav>
+  
+      
+      <section id="hero">
+        
+        <div
+          className="container flex flex-col-reverse items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 md:flex-row"
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          
+          <div className="flex flex-col mb-32 space-y-12 md:w-1/2">
+            <h1
+              className="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left"
+            >
+              Bring everyone together to build better products
+            </h1>
+            <p className="max-w-sm text-center text-darkGrayishBlue md:text-left">
+              Manage makes it simple for software teams to plan day-to-day tasks
+              while keeping the larger team goals in view.
+            </p>
+            <div className="flex justify-center md:justify-start">
+              <a
+                href="#"
+                className="p-3 px-6 pt-2 text-white bg-red-500 rounded-full baseline hover:bg-red-600"
+                >Get Started </a>
+            </div>
+          </div>
+    
+          <div className="md:w-1/2">
+            <img src="illustration-intro.svg" alt="" />
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+    
+    
+    
+</body>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    
   )
 }
